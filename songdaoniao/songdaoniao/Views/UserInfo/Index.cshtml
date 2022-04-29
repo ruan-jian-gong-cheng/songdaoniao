@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <form action="/UserInfo/Register" method="post">
+        <div>
+            <p>
+                卡号：@Html.TextBox("CardNumber")*
+            </p>
+            <p>
+                姓名：@Html.TextBox("name")*
+            </p>
+            <p>
+                用户名：@Html.TextBox("username")*
+            </p>
+            <p>
+                密码：@Html.Password("password")*
+            </p>
+            <p>
+                电话:@Html.TextBox("phone")*
+            </p>
+            <p>
+                地址：@Html.TextBox("address")*
+            </p>
+            <p>
+                邮箱：@Html.TextBox("email")
+            </p>
+            <input id="Submit1" type="submit" value="submit" />
+        </div>
+    </form>
+</body>
+</html>
