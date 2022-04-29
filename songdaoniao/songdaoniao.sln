@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1500
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "songdaoniao", "songdaoniao\songdaoniao.csproj", "{B2CB092B-5D7A-46E0-BB58-0DC41F837E2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{2F4F41C4-2417-46FC-9D06-D37ECD4FAC4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B2CB092B-5D7A-46E0-BB58-0DC41F837E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2CB092B-5D7A-46E0-BB58-0DC41F837E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2CB092B-5D7A-46E0-BB58-0DC41F837E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F4F41C4-2417-46FC-9D06-D37ECD4FAC4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F4F41C4-2417-46FC-9D06-D37ECD4FAC4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F4F41C4-2417-46FC-9D06-D37ECD4FAC4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F4F41C4-2417-46FC-9D06-D37ECD4FAC4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
