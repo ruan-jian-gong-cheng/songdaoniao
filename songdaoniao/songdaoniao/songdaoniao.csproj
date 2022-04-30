@@ -175,6 +175,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\UserInfo\Index.cshtml" />
     <Content Include="Views\LogIn\Index.cshtml" />
+    <Content Include="Views\LogIn\ceshi.cshtml" />
+    <Content Include="Views\LogIn\paotui.cshtml" />
+    <Content Include="Views\LogIn\Ceshi1.cshtml" />
+    <Content Include="Views\LogIn\ceshi2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
