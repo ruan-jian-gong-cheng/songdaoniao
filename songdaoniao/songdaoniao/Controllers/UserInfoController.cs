@@ -29,10 +29,16 @@ namespace WebApplication5.Controllers
             account.Telephone = Request.Form["phone"];
             account.Address = Request.Form["address"];
             account.Email = Request.Form["email"];
+
+            client client = new client();
+            client.CardNumber = Request.Form["CardNumber"];
+
             Model1 model1 = new Model1();
             model1.account.Add(account);
-            var data = model1.account.ToList();
-            data = data.Where(p => p.CardNumber.Contains(account.CardNumber)).ToList();
+
+            //var data = model1.account.ToList();
+            //data = data.Where(p => p.CardNumber.Contains(account.CardNumber)).ToList();
+            var data = model1.account.Where(p => p.CardNumber == account.CardNumber).FirstOrDefault();
 
             if (string.IsNullOrEmpty(account.CardNumber) || string.IsNullOrEmpty(account.Name) || string.IsNullOrEmpty(account.Nickname) || string.IsNullOrEmpty(account.Password) || string.IsNullOrEmpty(account.Telephone) || string.IsNullOrEmpty(account.Address))
             {
@@ -48,10 +54,12 @@ namespace WebApplication5.Controllers
             {
                 // Model1 model1 = new Model1();
                 //model1.account.Add(account);
-
+                client.ClientID = (Convert.ToInt32((model1.client.OrderByDescending(d => d.ClientID).FirstOrDefault()).ClientID)+1).ToString();
+   
+                model1.client.Add(client);
                 model1.SaveChanges();
                 //return RedirectToAction("register");
-                return Content("<script>alert('亲注册成功');location.href='Index'</script>");
+                return Content("<script>alert('亲注册成功');location.href='/Login/Index'</script>");
             }
 
         }
