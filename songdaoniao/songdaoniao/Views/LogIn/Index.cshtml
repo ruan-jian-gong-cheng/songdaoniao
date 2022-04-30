@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <form action="/LogIn/Login" method="post">
+        <div>
+            <p>
+                卡号：@Html.TextBox("CardNumber")*
+            </p>
+
+            <p>
+                密码：@Html.Password("password")*
+
+                <input id="Login_Submit" type="submit" value="登陆" />
+        </div>
+    </form>
+    <input id="register" type="submit" onclick='location.href=("/UserInfo/Index")' value="注册" />
+</body>
+
+</html>
