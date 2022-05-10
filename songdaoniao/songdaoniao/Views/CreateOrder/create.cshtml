@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>create</title>
+</head>
+<body>
+
+    <form action="/CreateOrder/CreateResponse" method="post">
+        <div>
+            <p>
+                请选择订单类型：
+            </p>
+            <select id="Select1" name="Select">
+                <option value="快递代拿">快递代拿</option>
+                <option value="商超代买">商超代买</option>
+                <option value="外卖代拿">外卖代拿</option>
+                <option value="代送代办">代送代办</option>
+            </select>
+
+            <p>
+                请输入具体详细要求：<br /> @Html.TextArea("details");
+            </p>
+
+            请输入打赏小费金额：<input id="Text1" type="text" name="tip"/>（若不想设置金额，则不填）
+          
+            <br />
+            <input id="Create_Submit" type="submit" value="生成订单" />
+        </div>
+    </form>
+        
+</body>
+</html>

@@ -56,6 +56,7 @@ namespace songdaoniao.Controllers
             {
                 if (a == null)
                 {
+                    Session["cardnumber"] = CardNumber;
                     return Content("<script>alert('登陆成功');location.href='ceshi'</script>");
                 }
                 else

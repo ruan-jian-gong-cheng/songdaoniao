@@ -127,9 +127,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CreateOrderController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Controllers\ViewOrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -179,6 +181,8 @@
     <Content Include="Views\LogIn\paotui.cshtml" />
     <Content Include="Views\LogIn\Ceshi1.cshtml" />
     <Content Include="Views\LogIn\ceshi2.cshtml" />
+    <Content Include="Views\CreateOrder\Create.cshtml" />
+    <Content Include="Views\ViewOrder\Orderview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

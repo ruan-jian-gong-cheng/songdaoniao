@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>orderview</title>
+</head>
+<body>
+    <div>
+        <p>查看您的订单：</p>
+        <p>订单类型：@ViewData["订单类型"]</p>
+        <p>生成时间：@ViewData["生成时间"]</p>
+        <p>具体要求：@ViewData["具体要求"]</p>
+        <p>打赏小费：@ViewData["打赏小费"]</p>
+        <p>骑手联系方式：@ViewData["骑手联系方式"]</p>
+        <form action="/ViewOrder/Refresh" method="post">
+            <input id="View_Submit" type="submit" value="刷新" />
+        </form>
+        <input id="Button1" type="button" value="完成订单" />
+    </div>
+</body>
+</html>

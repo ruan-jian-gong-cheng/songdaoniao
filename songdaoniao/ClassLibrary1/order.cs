@@ -23,7 +23,7 @@ namespace ClassLibrary1
         [StringLength(30)]
         public string ClientID { get; set; }
 
-        [Required]
+        
         [StringLength(30)]
         public string RunnerID { get; set; }
 
@@ -31,7 +31,7 @@ namespace ClassLibrary1
         [StringLength(30)]
         public string ClientPhone { get; set; }
 
-        [Required]
+        
         [StringLength(30)]
         public string RunnerPhone { get; set; }
 
@@ -40,6 +40,9 @@ namespace ClassLibrary1
 
         [StringLength(10)]
         public string Tip { get; set; }
+
+        [StringLength(50)]
+        public string Type { get; set; }
 
         public virtual client client { get; set; }
 
