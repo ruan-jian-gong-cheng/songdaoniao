@@ -57,11 +57,11 @@ namespace songdaoniao.Controllers
                 if (a == null)
                 {
                     Session["cardnumber"] = CardNumber;
-                    return Content("<script>alert('登陆成功');location.href='ceshi'</script>");
+                    return Content("<script>alert('登陆成功');location.href='Ceshi'</script>");
                 }
                 else
                 {
-                    return Content("<script>alert('登陆成功');location.href='paotui'</script>");
+                    return Content("<script>alert('登陆成功');location.href='Paotui'</script>");
                 }
                 
             }
@@ -82,7 +82,7 @@ namespace songdaoniao.Controllers
             
             model1.runner.Add(runner);
             model1.SaveChanges();
-            return Content("<script>alert('申请成功！');location.href='paotui'</script>");
+            return Content("<script>alert('申请成功！');location.href='Paotui'</script>");
         }
     }
 }
