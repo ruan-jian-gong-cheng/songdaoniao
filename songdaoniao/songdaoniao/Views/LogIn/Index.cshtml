@@ -7,21 +7,30 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
+    <link href="~/Content/Login.css" rel="stylesheet" />
 </head>
 <body>
-    <form action="/LogIn/Login" method="post">
-        <div>
-            <p>
-                卡号：@Html.TextBox("CardNumber")
-            </p>
-
-            <p>
-                密码：@Html.Password("password")
-
-                <input id="Login_Submit" type="submit" value="登陆" />
+    <div class="container">
+        <div class="form-box">
+            <div class="login-box">
+                <h1>Login</h1>
+                <form action="/LogIn/Login" method="post">
+                    <p>卡号：@Html.TextBox("CardNumber")</p>
+                    <p>密码：@Html.Password("password")</p>
+                    <input id="Login_Submit" type="submit" value="登陆" />
+                </form>
+                
+            </div>
         </div>
-    </form>
-    <input id="register" type="submit" onclick='location.href=("/UserInfo/Index")' value="注册" />
+        <div class="con-box right">
+            <h2>欢迎来到<span>送到鸟</span></h2>
+            <p>一个<span>校园跑腿</span>服务平台</p>
+            
+            <img src="~/Images/bird1.png" />
+            <p>没有账号？</p>
+            <input id="register" type="submit" onclick='location.href=("/UserInfo/Index")' value="去注册" />
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,42 +1,39 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Register</title>
+    <link href="~/Content/Register.css" rel="stylesheet" />
 </head>
-<body>
-    <form action="/UserInfo/Register" method="post">
-        <div>
-            <p>
-                卡号：@Html.TextBox("CardNumber")*
-            </p>
-            <p>
-                姓名：@Html.TextBox("name")*
-            </p>
-            <p>
-                用户名：@Html.TextBox("username")*
-            </p>
-            <p>
-                密码：@Html.Password("password")*
-            </p>
-            <p>
-                电话:@Html.TextBox("phone")*
-            </p>
-            <p>
-                地址：@Html.TextBox("address")*
-            </p>
-            <p>
-                邮箱：@Html.TextBox("email")
-            </p>
-            <input id="Submit1" type="submit" value="提交" />
-        </div>
-    </form>
 
+<body>
+    <div class="container">
+        <div class="form-box">
+            <div class="register-box">
+                <h1>Register</h1>
+                <form action="/UserInfo/Register" method="post">
+                    <p>卡号：@Html.TextBox("CardNumber")*</p>
+                    <p>姓名：@Html.TextBox("name")*</p>
+                    <p>用户名：@Html.TextBox("username","", new { @style = "width:146px;" })*</p>
+                    <p>密码：@Html.Password("password")*</p>
+                    <p>电话：@Html.TextBox("phone")*</p>
+                    <p>地址：@Html.TextBox("address")*</p>
+                    <p>邮箱：@Html.TextBox("email")</p>
+                    <input id="Submit1" type="submit" value="注册" />
+                </form>
+            </div>
+        </div>
+        <div class="con-box left">
+            <h2>欢迎来到<span>送到鸟</span></h2>
+            <p>一个<span>校园跑腿</span>服务平台</p>
+            <img src="~/Images/bird2.png" />
+            <p>已有账号？</p>
+            <input id="login" type="submit" onclick='location.href=("/LogIn/Index")' value="去登录" />
+        </div>
+    </div>
 </body>
 </html>
