@@ -130,6 +130,7 @@
     <Compile Include="Controllers\CreateOrderController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ReciveOrderController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Controllers\ViewOrderController.cs" />
     <Compile Include="Global.asax.cs">
@@ -180,9 +181,9 @@
     <Content Include="Views\LogIn\Ceshi.cshtml" />
     <Content Include="Views\LogIn\Paotui.cshtml" />
     <Content Include="Views\LogIn\Ceshi1.cshtml" />
-    <Content Include="Views\LogIn\Ceshi2.cshtml" />
     <Content Include="Views\CreateOrder\Create.cshtml" />
     <Content Include="Views\ViewOrder\Orderview.cshtml" />
+    <Content Include="Views\ReciveOrder\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
