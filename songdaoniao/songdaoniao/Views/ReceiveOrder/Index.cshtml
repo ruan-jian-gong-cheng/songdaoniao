@@ -1,0 +1,55 @@
+﻿@using ClassLibrary1
+
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+    List<order> order = ViewBag.List;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <form action="/ReceiveOrder/ReceiveResponse" method="post">
+        <div>
+            <h3>当前所有待接的订单：</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <td>订单号</td>
+                        <td>生成时间</td>
+                        <td>订单类型</td>
+                        <td>具体要求</td>
+                        <td>收件人ID</td>
+                        <td>收件人电话</td>
+                        <td>打赏</td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (order li in order)
+                    {
+                        <tr>
+                            <td>@li.OrderNumber</td>
+                            <td>@li.Date</td>
+                            <td>@li.Type</td>
+                            <td>@li.Text</td>
+                            <td>@li.ClientID</td>
+                            <td>@li.ClientPhone</td>
+                            <td>@li.Tip</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p>
+                请输入您想接的订单的订单号：<br /> @Html.TextArea("orderid");<input id="button" type="submit" onclick='location.href=("/ReceiveOrder/ReceiveResponse")' value="接订单" />
+            </p>
+        </div>
+    </form>
+</body>
+</html>
