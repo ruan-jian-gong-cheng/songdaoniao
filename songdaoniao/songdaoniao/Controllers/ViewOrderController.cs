@@ -29,6 +29,7 @@ namespace songdaoniao.Controllers
             base.ViewData["订单类型"] = data.Type;
             base.ViewData["生成时间"] = data.Date;
             base.ViewData["具体要求"] = data.Text;
+            base.ViewData["完成情况"] = data.State;
             if (string.IsNullOrEmpty(data.Tip))
             {
                 base.ViewData["打赏小费"] = "未设置金额";

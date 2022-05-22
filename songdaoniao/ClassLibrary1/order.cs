@@ -44,6 +44,9 @@ namespace ClassLibrary1
         [StringLength(50)]
         public string Type { get; set; }
 
+        [StringLength(30)]
+        public string State { get; set; }
+
         public virtual client client { get; set; }
 
         public virtual runner runner { get; set; }

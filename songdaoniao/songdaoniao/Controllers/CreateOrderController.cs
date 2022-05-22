@@ -51,7 +51,7 @@ namespace songdaoniao.Controllers
             var data2 = model1.account.Where(p => p.CardNumber == id.ToString()).FirstOrDefault();
             var clientphone = data2.Telephone;
             order.ClientPhone = clientphone;
-
+            order.State = "未完成";
             var tip = Request.Form["tip"];
             if (string.IsNullOrEmpty(tip))
             {
