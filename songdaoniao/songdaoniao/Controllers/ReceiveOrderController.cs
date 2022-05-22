@@ -122,5 +122,14 @@ namespace songdaoniao.Controllers
                 return Content("<script>alert('请输入您已接单的正确的订单号！');location.href='/ReceiveOrder/HaveReceived'</script>");
             }
         }
+        public ActionResult FinishOrder()
+        {
+            // runner runner = new runner();
+            Model1 model1 = new Model1();
+            order order = new order();
+            order.State = "已完成";
+            
+            return View();
+        }
     }
 }

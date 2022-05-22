@@ -34,6 +34,7 @@
                 <tbody>
                     @foreach (order li in order)
                     {
+
                         <tr>
                             <td>@li.OrderNumber</td>
                             <td>@li.Date</td>
@@ -43,7 +44,7 @@
                             <td>@li.ClientPhone</td>
                             <td>@li.Tip</td>
                             <td>@li.State</td>
-                            <td><input id="changeState" type="submit" onclick='location.href=("/FinishOrder/Finish")' value="完成了？修改状态" /></td>
+                            <td><input id="changeState" type="submit" onclick='location.href=("/ReceiveOrder/FinishOrder")' value="完成了？修改状态" /></td>
                         </tr>
                     }
                 </tbody>
