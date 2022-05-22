@@ -122,13 +122,19 @@ namespace songdaoniao.Controllers
                 return Content("<script>alert('请输入您已接单的正确的订单号！');location.href='/ReceiveOrder/HaveReceived'</script>");
             }
         }
-        public ActionResult FinishOrder()
+      
+        public ActionResult FinishOrder(object sender, EventArgs e)
         {
             // runner runner = new runner();
             Model1 model1 = new Model1();
             order order = new order();
-            order.State = "已完成";
+            Button button = (Button)sender;
+
+            //object id = this.GetType().GetField(name, System.Reflection.BindingFlags.NonPublic)
+            //order.State.Where<order.OrderNumber==button.ID> = "已完成";
             
+            order order1 = model1.order.Where(p => p.OrderNumber == button.ID.ToString()).FirstOrDefault();
+            order1.State = "已完成";
             return View();
         }
     }
