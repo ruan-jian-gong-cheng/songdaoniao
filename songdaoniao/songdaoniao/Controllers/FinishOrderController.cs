@@ -10,9 +10,9 @@ using System.Data.Entity.Validation;
 
 namespace songdaoniao.Controllers
 {
-    public class FinishController : Controller
+    public class FinishOrderController : Controller
     {
-        // GET: Finish
+        // GET: FinishOrder
         public ActionResult Index()
         {
             return View();
@@ -20,14 +20,11 @@ namespace songdaoniao.Controllers
 
         public ActionResult Finish()
         {
-           // runner runner = new runner();
+            // runner runner = new runner();
             Model1 model1 = new Model1();
             order order = new order();
             order.State = "已完成";
             return View();
         }
-
-
-
     }
 }
