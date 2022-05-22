@@ -82,5 +82,45 @@ namespace songdaoniao.Controllers
 
             return View();
         }
+
+        public ActionResult CancelOrder()
+        {
+            Model1 model1 = new Model1();
+
+            var orderID = Request.Form["OrderID"];
+
+            if (string.IsNullOrEmpty(orderID))
+            {
+                return Content("<script>alert('请先输入需退单的订单号！');location.href='/ReceiveOrder/HaveReceived'</script>");
+            }
+
+            order order = model1.order.Where(p => p.OrderNumber == orderID.ToString()).FirstOrDefault();
+            var runnerID1 = order.RunnerID;
+
+            if (runnerID1 == null)
+            {
+                return Content("<script>alert('请输入您已接单的订单号！');location.href='/ReceiveOrder/HaveReceived'</script>");
+            }
+
+            var cardNumber = Session["cardnumber"];
+            var data = model1.runner.Where(p => p.CardNumber == cardNumber.ToString()).FirstOrDefault();
+            var runnerID2 = data.RunnerID;
+
+            //如果输入订单号的订单中的RunnerID和当前账号的RunnerID相同，就进行修改
+            if (runnerID1 == runnerID2)
+            {
+                order.RunnerID = null;
+                order.RunnerPhone = null;
+
+                model1.Entry(order).State = System.Data.Entity.EntityState.Modified;
+                model1.SaveChanges();
+
+                return Content("<script>alert('退单成功！');location.href='/ReceiveOrder/Index'</script>");
+            }
+            else
+            {
+                return Content("<script>alert('请输入您已接单的正确的订单号！');location.href='/ReceiveOrder/HaveReceived'</script>");
+            }
+        }
     }
 }

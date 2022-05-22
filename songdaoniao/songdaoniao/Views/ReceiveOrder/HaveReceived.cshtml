@@ -14,7 +14,7 @@
     <title>HaveReceived</title>
 </head>
 <body>
-    <form>
+    
         <div>
             <h3>您已接收的订单：</h3>
             <table>
@@ -49,6 +49,12 @@
                 </tbody>
             </table>
         </div>
-    </form>   
+       
+    <form action="/ReceiveOrder/CancelOrder" method="post">
+        <p>如果您因突发情况无法完成订单想要退单:</p>
+        <p>
+            请输入您想退单的订单号：<br /> @Html.TextBox("OrderID");<input id="button" type="submit" onclick='location.href=("/ReceiveOrder/CancelOrder")' value="点击退单" />
+        </p>
+    </form>
 </body>
 </html>
