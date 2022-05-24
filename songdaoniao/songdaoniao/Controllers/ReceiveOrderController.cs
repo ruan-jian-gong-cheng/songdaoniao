@@ -129,10 +129,6 @@ namespace songdaoniao.Controllers
             Model1 model1 = new Model1();
            // order order = new order();
 
-
-            //object id = this.GetType().GetField(name, System.Reflection.BindingFlags.NonPublic)
-            //order.State.Where<order.OrderNumber==button.ID> = "已完成";
-
             var FinishID = Request.Form["FinishID"];
             order FinishOrder = model1.order.Where(p => p.OrderNumber == FinishID.ToString()).FirstOrDefault();
             var FinishRunnerID = FinishOrder.RunnerID;
@@ -141,7 +137,7 @@ namespace songdaoniao.Controllers
             var data = model1.runner.Where(p => p.CardNumber == cardNumber.ToString()).FirstOrDefault();
             var runnerID = data.RunnerID;
 
-            if (FinishID == runnerID && FinishOrder.State=="未完成")
+            if (FinishRunnerID == runnerID && FinishOrder.State=="未完成")
             {
                 FinishOrder.State = "已完成";
 
