@@ -134,9 +134,23 @@ namespace songdaoniao.Controllers
             //order.State.Where<order.OrderNumber==button.ID> = "已完成";
 
             var FinishID = Request.Form["FinishID"];
-            order order1 = model1.order.Where(p => p.OrderNumber == FinishID).FirstOrDefault();
-            order1.State = "已完成";
-            return View();
+            var FinishOrder = model1.order.Where(p => p.OrderNumber == FinishID).FirstOrDefault();
+            var FinishRunnerID = FinishOrder.RunnerID;
+
+            var cardNumber = Session["cardnumber"];
+            var data = model1.runner.Where(p => p.CardNumber == cardNumber.ToString()).FirstOrDefault();
+            var runnerID = data.RunnerID;
+
+            if (FinishID == runnerID && FinishOrder.State=="未完成")
+            {
+                FinishOrder.State = "已完成";
+                return Content("<script>alert('成功完成该订单！');location.href='/ReceiveOrder/HaveReceived'</script>");
+            }
+            else
+            {
+                return Content("<script>alert('请输入您未完成的订单号！');location.href='/ReceiveOrder/HaveReceived'</script>");
+            }
+
         }
     }
 }
