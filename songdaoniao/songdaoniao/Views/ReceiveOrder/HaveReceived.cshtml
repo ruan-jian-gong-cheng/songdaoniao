@@ -50,18 +50,19 @@
                 </tbody>
             </table>
         </div>
-        <form>
+        <form action="/ReceiveOrder/FinishOrder" method="post">
+
             <p>若您已完成订单：</p>
             <p>
                 请输入您已完成的订单号：<br /> @Html.TextBox("FinishID");<input type="submit" onclick='location.href=("/ReceiveOrder/FinishOrder")' value="点击完成" />
             </p>
         </form>
-       
-    <form >
-        <p>如果您因突发情况无法完成订单想要退单:</p>
-        <p>
-            请输入您想退单的订单号：<br /> @Html.TextBox("OrderID");<input id="button" type="submit" onclick='location.href=("/ReceiveOrder/CancelOrder")' value="点击退单" />
-        </p>
-    </form>
+        <form action="/ReceiveOrder/CancelOrder" method="post">
+
+                <p>如果您因突发情况无法完成订单想要退单:</p>
+                <p>
+                    请输入您想退单的订单号：<br /> @Html.TextBox("OrderID");<input id="button" type="submit" onclick='location.href=("/ReceiveOrder/CancelOrder")' value="点击退单" />
+                </p>
+         </form>
 </body>
 </html>
