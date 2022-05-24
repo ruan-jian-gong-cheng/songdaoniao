@@ -123,17 +123,18 @@ namespace songdaoniao.Controllers
             }
         }
       
-        public ActionResult FinishOrder(object sender, EventArgs e)
+        public ActionResult FinishOrder()
         {
             // runner runner = new runner();
             Model1 model1 = new Model1();
             order order = new order();
-            Button button = (Button)sender;
+
 
             //object id = this.GetType().GetField(name, System.Reflection.BindingFlags.NonPublic)
             //order.State.Where<order.OrderNumber==button.ID> = "已完成";
-            
-            order order1 = model1.order.Where(p => p.OrderNumber == button.ID.ToString()).FirstOrDefault();
+
+            var FinishID = Request.Form["FinishID"];
+            order order1 = model1.order.Where(p => p.OrderNumber == FinishID).FirstOrDefault();
             order1.State = "已完成";
             return View();
         }
