@@ -18,7 +18,7 @@ namespace songdaoniao.Controllers
             Model1 model1 = new Model1();
             //order order = new order();
             
-            List<order> list= model1.order.Where(p => p.RunnerPhone==null).ToList();
+            List<order> list = model1.order.Where(p => p.RunnerPhone == null).ToList();
             ViewBag.list = list;
             return View();
         }
@@ -127,7 +127,7 @@ namespace songdaoniao.Controllers
         {
             // runner runner = new runner();
             Model1 model1 = new Model1();
-           // order order = new order();
+            // order order = new order();
 
             var FinishID = Request.Form["FinishID"];
             order FinishOrder = model1.order.Where(p => p.OrderNumber == FinishID.ToString()).FirstOrDefault();
@@ -137,7 +137,7 @@ namespace songdaoniao.Controllers
             var data = model1.runner.Where(p => p.CardNumber == cardNumber.ToString()).FirstOrDefault();
             var runnerID = data.RunnerID;
 
-            if (FinishRunnerID == runnerID && FinishOrder.State=="未完成")
+            if (FinishRunnerID == runnerID && FinishOrder.State == "未完成")
             {
                 FinishOrder.State = "已完成";
 
