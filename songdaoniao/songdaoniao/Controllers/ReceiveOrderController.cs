@@ -127,14 +127,14 @@ namespace songdaoniao.Controllers
         {
             // runner runner = new runner();
             Model1 model1 = new Model1();
-            order order = new order();
+           // order order = new order();
 
 
             //object id = this.GetType().GetField(name, System.Reflection.BindingFlags.NonPublic)
             //order.State.Where<order.OrderNumber==button.ID> = "已完成";
 
             var FinishID = Request.Form["FinishID"];
-            var FinishOrder = model1.order.Where(p => p.OrderNumber == FinishID).FirstOrDefault();
+            order FinishOrder = model1.order.Where(p => p.OrderNumber == FinishID.ToString()).FirstOrDefault();
             var FinishRunnerID = FinishOrder.RunnerID;
 
             var cardNumber = Session["cardnumber"];
@@ -144,6 +144,9 @@ namespace songdaoniao.Controllers
             if (FinishID == runnerID && FinishOrder.State=="未完成")
             {
                 FinishOrder.State = "已完成";
+
+                model1.Entry(FinishOrder).State = System.Data.Entity.EntityState.Modified;
+                model1.SaveChanges();
                 return Content("<script>alert('成功完成该订单！');location.href='/ReceiveOrder/HaveReceived'</script>");
             }
             else
