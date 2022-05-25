@@ -12,6 +12,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>HaveReceived</title>
+    
 </head>
 <body>
 
@@ -35,36 +36,23 @@
                     @foreach (order li in order)
                     {
 
-                        <tr>
-                            <td>@li.OrderNumber</td>
-                            <td>@li.Date</td>
-                            <td>@li.Type</td>
-                            <td>@li.Text</td>
-                            <td>@li.ClientID</td>
-                            <td>@li.ClientPhone</td>
-                            <td>@li.Tip</td>
-                            <td>@li.State</td>
-                            
-                        </tr>
+                    <tr>
+                        <td>@li.OrderNumber</td>
+                        <td>@li.Date</td>
+                        <td>@li.Type</td>
+                        <td>@li.Text</td>
+                        <td>@li.ClientID</td>
+                        <td>@li.ClientPhone</td>
+                        <td>@li.Tip</td>
+                        <td>@li.State</td>
+                        <td>@Html.ActionLink("退单", "CancelOrder", new { orderid = li.OrderNumber })</td>
+                        <td>@Html.ActionLink("已完成", "FinishOrder", new { orderid = li.OrderNumber })</td>
+                    </tr>
                     }
                 </tbody>
             </table>
         </div>
-        <form action="/ReceiveOrder/FinishOrder" method="post">
-
-            <p>若您已完成订单：</p>
-            <p>
-                请输入您已完成的订单号：<br /> @Html.TextBox("FinishID");<input type="submit" onclick='location.href=("/ReceiveOrder/FinishOrder")' value="点击完成" />
-            </p>
-        </form>
-        <br />
-        <form action="/ReceiveOrder/CancelOrder" method="post">
-
-                <p>如果您因突发情况无法完成订单想要退单:</p>
-                <p>
-                    请输入您想退单的订单号：<br /> @Html.TextBox("OrderID");<input id="button" type="submit" onclick='location.href=("/ReceiveOrder/CancelOrder")' value="点击退单" />
-                </p>
-         </form>
+        
          <br />
          <p>若您想返回继续接单：</p>
          <input type="submit" onclick='location.href=("/ReceiveOrder/Index")' value="点击返回" />

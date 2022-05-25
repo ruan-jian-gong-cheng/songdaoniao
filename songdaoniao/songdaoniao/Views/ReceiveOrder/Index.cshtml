@@ -12,9 +12,10 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    
 </head>
 <body>
-    <form action="/ReceiveOrder/ReceiveResponse" method="post">
+    
         <div>
             <h3>当前所有待接的订单：</h3>
             <table>
@@ -41,16 +42,13 @@
                             <td>@li.ClientID</td>
                             <td>@li.ClientPhone</td>
                             <td>@li.Tip</td>
-
+                            <td>@Html.ActionLink("接单", "HaveReceived", new {orderid=li.OrderNumber})</td>
                         </tr>
                     }
                 </tbody>
             </table>
-            <p>
-                请输入您想接的订单的订单号：<br /> @Html.TextBox("orderid");<input id="button" type="submit" onclick='location.href=("/ReceiveOrder/ReceiveResponse")' value="接订单" />
-            </p>
+            
         </div>
-    </form>
     
     <br />
     <p>查看您已接收的订单：</p>
