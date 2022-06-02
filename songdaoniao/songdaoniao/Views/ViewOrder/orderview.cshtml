@@ -17,11 +17,11 @@
         <p>生成时间：@ViewData["生成时间"]</p>
         <p>具体要求：@ViewData["具体要求"]</p>
         <p>打赏小费：@ViewData["打赏小费"]</p>
-        <p>骑手联系方式：@ViewData["骑手联系方式"]</p>
+        <p>骑手联系方式：@ViewData["跑腿员联系方式"]</p>
         <form action="/ViewOrder/Refresh" method="post">
             <input id="View_Submit" type="submit" value="刷新" />
         </form>
-        <input id="Button1" type="button" value="完成订单" />
+        <input id="view" type="submit" onclick='location.href=("/ViewOrder/PersonalView")' value="查看个人订单" />
     </div>
 </body>
 </html>

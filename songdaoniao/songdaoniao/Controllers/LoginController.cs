@@ -54,7 +54,13 @@ namespace songdaoniao.Controllers
 
             if (data != null)
             {
-                if (a == null)
+                if(CardNumber== "1000000001")
+                {
+                    Session["cardnumber"] = CardNumber;
+                    //return Redirect("/Admin/Permission");
+                    return Content("<script>alert('欢迎管理员');location.href='/Admin/Permission'</script>");
+                }
+                else if (a == null || (a!=null && a.Effective=="无效"))
                 {
                     Session["cardnumber"] = CardNumber;
                     return Content("<script>alert('登陆成功');location.href='Ceshi'</script>");
@@ -76,14 +82,16 @@ namespace songdaoniao.Controllers
 
         public ActionResult Reque()
         {
+            //修改账户的申请状态为已申请
+
             Model1 model1 = new Model1();
-            runner runner = new runner();
-            runner.CardNumber= Request.Form["CardNumber"];
-            runner.RunnerID = (Convert.ToInt32((model1.runner.OrderByDescending(d => d.RunnerID).FirstOrDefault()).RunnerID) + 1).ToString();
-            
-            model1.runner.Add(runner);
+            var cardnumber = Session["cardnumber"];
+            account account = model1.account.Where(p => p.CardNumber == cardnumber.ToString()).FirstOrDefault();
+            account.ApplyFor = "已申请";
+
+            model1.Entry(account).State = System.Data.Entity.EntityState.Modified;
             model1.SaveChanges();
-            return Content("<script>alert('申请成功！');location.href='Paotui'</script>");
+            return Content("<script>alert('申请成功！');location.href='Ceshi'</script>");
         }
     }
 }

@@ -27,6 +27,9 @@ namespace ClassLibrary1
         [StringLength(10)]
         public string TipSum { get; set; }
 
+        [StringLength(10)]
+        public string Effective { get; set; }
+
         public virtual account account { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

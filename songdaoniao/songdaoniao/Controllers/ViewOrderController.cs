@@ -40,11 +40,11 @@ namespace songdaoniao.Controllers
             }
             if (string.IsNullOrEmpty(data.RunnerPhone))
             {
-                base.ViewData["骑手联系方式"] = "暂未有骑手接单";
+                base.ViewData["跑腿员联系方式"] = "暂未有跑腿员接单";
             }
             else
             {
-                base.ViewData["骑手联系方式"] = data.RunnerPhone;
+                base.ViewData["跑腿员联系方式"] = data.RunnerPhone;
             }
 
             return View();
@@ -53,6 +53,21 @@ namespace songdaoniao.Controllers
         public ActionResult Refresh()
         {
             return Content("<script>alert('正在刷新，请稍候……');location.href='/ViewOrder/Orderview'</script>");
+        }
+
+        public ActionResult PersonalView()
+        {
+            //查询所有该账户名下的订单
+            Model1 model1 = new Model1();
+            var id = Session["cardnumber"];
+
+            var data1 = model1.client.Where(p => p.CardNumber == id.ToString()).FirstOrDefault();
+            var clientid = data1.ClientID;
+
+            List<order> list = model1.order.Where(p => p.ClientID == clientid.ToString()).ToList();
+            ViewBag.list = list;
+
+            return View();
         }
     }
 }

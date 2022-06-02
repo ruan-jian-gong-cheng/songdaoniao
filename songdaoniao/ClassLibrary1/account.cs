@@ -44,6 +44,9 @@ namespace ClassLibrary1
         [StringLength(30)]
         public string Email { get; set; }
 
+        [StringLength(10)]
+        public string ApplyFor { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<client> client { get; set; }
 

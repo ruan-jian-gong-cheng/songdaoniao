@@ -29,6 +29,7 @@ namespace WebApplication5.Controllers
             account.Telephone = Request.Form["phone"];
             account.Address = Request.Form["address"];
             account.Email = Request.Form["email"];
+            account.ApplyFor = "未申请";
 
             client client = new client();
             client.CardNumber = Request.Form["CardNumber"];

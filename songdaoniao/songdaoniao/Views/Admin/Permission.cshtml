@@ -1,0 +1,101 @@
+﻿@using ClassLibrary1
+
+@{
+    Layout = null;
+    List<account> account = ViewBag.List;
+    List<account> account2 = ViewBag.List2;
+    List<account> account3 = ViewBag.List3;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Permission</title>
+</head>
+<body>
+    <h3>权限管理</h3>
+    <div>
+        <p>委托人：</p>
+        <table>
+            <thead>
+                <tr>
+                    <td>卡号</td>
+                    <td>密码</td>
+                    <td>姓名</td>
+                    <td>昵称</td>
+                    <td>电话</td>
+                    <td>地址</td>
+                    <td>邮箱</td>
+                    <td>申请状态</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (account li in account)
+                {
+                    <tr>
+                        <td>@li.CardNumber</td>
+                        <td>@li.Password</td>
+                        <td>@li.Name</td>
+                        <td>@li.Nickname</td>
+                        <td>@li.Telephone</td>
+                        <td>@li.Address</td>
+                        <td>@li.Email</td>
+                        <td>@li.ApplyFor</td>
+                        <td>@Html.ActionLink("授予权限", "Confered", new { cardnumber = li.CardNumber })</td>
+                    </tr>
+                }
+            </tbody>
+            <tbody>
+                @foreach (account li2 in account2)
+                {
+                    <tr>
+                        <td>@li2.CardNumber</td>
+                        <td>@li2.Password</td>
+                        <td>@li2.Name</td>
+                        <td>@li2.Nickname</td>
+                        <td>@li2.Telephone</td>
+                        <td>@li2.Address</td>
+                        <td>@li2.Email</td>
+                        <td>@li2.ApplyFor</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <p>跑腿员：</p>
+        <table>
+            <thead>
+                <tr>
+                    <td>卡号</td>
+                    <td>密码</td>
+                    <td>姓名</td>
+                    <td>昵称</td>
+                    <td>电话</td>
+                    <td>地址</td>
+                    <td>邮箱</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (account li3 in account3)
+                {
+                    <tr>
+                        <td>@li3.CardNumber</td>
+                        <td>@li3.Password</td>
+                        <td>@li3.Name</td>
+                        <td>@li3.Nickname</td>
+                        <td>@li3.Telephone</td>
+                        <td>@li3.Address</td>
+                        <td>@li3.Email</td>
+                        <td>@Html.ActionLink("剥夺权限", "Deprived", new { cardnumber = li3.CardNumber })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

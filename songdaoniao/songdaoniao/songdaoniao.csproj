@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CreateOrderController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -185,6 +186,8 @@
     <Content Include="Views\ViewOrder\Orderview.cshtml" />
     <Content Include="Views\ReceiveOrder\Index.cshtml" />
     <Content Include="Views\ReceiveOrder\HaveReceived.cshtml" />
+    <Content Include="Views\ViewOrder\PersonalView.cshtml" />
+    <Content Include="Views\Admin\Permission.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
