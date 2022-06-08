@@ -1,7 +1,7 @@
 ﻿@using ClassLibrary1
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout4.cshtml";
     List<account> account = ViewBag.List;
     List<account> account2 = ViewBag.List2;
     List<account> account3 = ViewBag.List3;
@@ -13,35 +13,35 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Permission</title>
+    <link href="~/Content/Permission.css" rel="stylesheet" />
 </head>
 <body>
-    <h3>权限管理</h3>
+    <br /><h3>权限管理</h3>
     <div>
-        <p>委托人：</p>
-        <table>
+        <br /><p>委托人：</p><br />
+        <table  align="center" border="1" style="border-collapse: collapse;">
             <thead>
                 <tr>
                     <td>卡号</td>
-                    <td>密码</td>
                     <td>姓名</td>
                     <td>昵称</td>
                     <td>电话</td>
                     <td>地址</td>
                     <td>邮箱</td>
-                    <td>申请状态</td>
+                    <td>&nbsp;申请状态&nbsp;</td>
+                    <td>操作</td>
                 </tr>
             </thead>
             <tbody>
                 @foreach (account li in account)
                 {
                     <tr>
-                        <td>@li.CardNumber</td>
-                        <td>@li.Password</td>
-                        <td>@li.Name</td>
-                        <td>@li.Nickname</td>
-                        <td>@li.Telephone</td>
-                        <td>@li.Address</td>
-                        <td>@li.Email</td>
+                        <td>&nbsp;@li.CardNumber&nbsp;</td>
+                        <td>&nbsp;@li.Name&nbsp;</td>
+                        <td>&nbsp;@li.Nickname&nbsp;</td>
+                        <td>&nbsp;@li.Telephone&nbsp;</td>
+                        <td>&nbsp;@li.Address&nbsp;</td>
+                        <td>&nbsp;@li.Email&nbsp;</td>
                         <td>@li.ApplyFor</td>
                         <td>@Html.ActionLink("授予权限", "Confered", new { cardnumber = li.CardNumber })</td>
                     </tr>
@@ -52,7 +52,6 @@
                 {
                     <tr>
                         <td>@li2.CardNumber</td>
-                        <td>@li2.Password</td>
                         <td>@li2.Name</td>
                         <td>@li2.Nickname</td>
                         <td>@li2.Telephone</td>
@@ -66,30 +65,29 @@
     </div>
 
     <div>
-        <p>跑腿员：</p>
-        <table>
+        <br /><br /><br /><br /><p>跑腿员：</p><br />
+        <table align="center" border="1" style="border-collapse: collapse;">
             <thead>
                 <tr>
                     <td>卡号</td>
-                    <td>密码</td>
                     <td>姓名</td>
                     <td>昵称</td>
                     <td>电话</td>
                     <td>地址</td>
-                    <td>邮箱</td>
+                    <td>邮箱&nbsp;</td>
+                    <td>操作</td>
                 </tr>
             </thead>
             <tbody>
                 @foreach (account li3 in account3)
                 {
                     <tr>
-                        <td>@li3.CardNumber</td>
-                        <td>@li3.Password</td>
-                        <td>@li3.Name</td>
-                        <td>@li3.Nickname</td>
-                        <td>@li3.Telephone</td>
-                        <td>@li3.Address</td>
-                        <td>@li3.Email</td>
+                        <td>&nbsp;@li3.CardNumber&nbsp;</td>
+                        <td>&nbsp;@li3.Name&nbsp;</td>
+                        <td>&nbsp;@li3.Nickname&nbsp;</td>
+                        <td>&nbsp;@li3.Telephone&nbsp;</td>
+                        <td>&nbsp;@li3.Address&nbsp;</td>
+                        <td>&nbsp;@li3.Email</td>
                         <td>@Html.ActionLink("剥夺权限", "Deprived", new { cardnumber = li3.CardNumber })</td>
                     </tr>
                 }

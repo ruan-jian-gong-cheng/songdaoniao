@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
 <!DOCTYPE html>
@@ -7,20 +7,37 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>ceshi</title>
+    <title>请选择</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="~/Content/Ceshi.css" rel="stylesheet" />
 </head>
 <body>
     
-    <div>
-        <!--<input id="register" type="submit" onclick='location.href=("/LogIn/ceshi2")' value="委托人" />-->
-        <input id="register" type="submit" onclick='location.href=("/CreateOrder/Create")' value="委托人" />
-    </div>   
-
-    <form action="/LogIn/Reque" method="post">
+    <div style="text-align:center">
         <p>
-            <input id="register" type="submit" value="申请跑腿人权限" />
-        </p>
 
-    </form>
+            <h3>请选择：</h3>
+            <!--<input id="register" type="submit" onclick='location.href=("/LogIn/ceshi2")' value="委托人" />-->
+            <br />
+
+            <button style="top:160px; left:230px;" type="submit" id="register" class="btn-hover" onclick='location.href=("/CreateOrder/Create_Only")'>
+                <i class="fas fa-address-book" style="margin-right:15px;"></i>委托人
+            </button>
+
+            <br />
+        </p>
+            <form action="/LogIn/Reque" method="post">
+                <p>
+                    <button style="top:260px; left:230px;" id="register" type="submit" class="btn-hover" >
+                        <i class="fas fa-angle-right" style="margin-right:15px;"></i>申请跑腿人权限
+                    </button>
+
+                    <br />
+                </p>
+
+            </form>
+
+    </div>   
 </body>
 </html>

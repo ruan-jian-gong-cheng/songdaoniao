@@ -1,0 +1,41 @@
+﻿/* 创建三个相等的列 */
+.column {
+    float: left;
+    width: 33.33%;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+/* 列后清除浮动 */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 响应式布局 - 小于 600 px 时改为上下布局 */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.button input {
+    margin-top: 5%;
+    background-color: #fff;
+    color: #a262ad;
+    border: 1px solid #d3b7d8;
+    padding: 6px 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    outline: none;
+    cursor: pointer;
+}
+    .button input:hover {
+        background-color: rgb(220, 199, 214);
+        color: #fff;
+    }

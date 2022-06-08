@@ -144,10 +144,28 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Ceshi.css" />
+    <Content Include="Content\CreateOrder.css" />
+    <Content Include="Content\HaveReceived.css" />
+    <Content Include="Content\Login.css" />
+    <Content Include="Content\Master.css" />
+    <Content Include="Content\Orderview.css" />
+    <Content Include="Content\paotui.css" />
+    <Content Include="Content\Permission.css" />
+    <Content Include="Content\PersonalView.css" />
+    <Content Include="Content\Register.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\1.png" />
+    <Content Include="Images\2.png" />
+    <Content Include="Images\3.png" />
+    <Content Include="Images\backgroundcolor.jpg" />
+    <Content Include="Images\bird1.png" />
+    <Content Include="Images\bird2.png" />
+    <Content Include="Images\LOGO.PNG" />
+    <Content Include="Images\move.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -171,12 +189,8 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\UserInfo\Index.cshtml" />
     <Content Include="Views\LogIn\Index.cshtml" />
     <Content Include="Views\LogIn\Ceshi.cshtml" />
@@ -188,6 +202,12 @@
     <Content Include="Views\ReceiveOrder\HaveReceived.cshtml" />
     <Content Include="Views\ViewOrder\PersonalView.cshtml" />
     <Content Include="Views\Admin\Permission.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\CreateOrder\Create_Only.cshtml" />
+    <Content Include="Views\Shared\_Layout3.cshtml" />
+    <Content Include="Views\ViewOrder\Orderview_Only.cshtml" />
+    <Content Include="Views\ViewOrder\PersonalView_Only.cshtml" />
+    <Content Include="Views\Shared\_Layout4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

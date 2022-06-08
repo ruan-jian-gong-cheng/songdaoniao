@@ -38,30 +38,38 @@ namespace songdaoniao.Controllers
             Model1 model1 = new Model1();
             var cardnumber = Request["cardnumber"];
 
-            account account= model1.account.Where(p => p.CardNumber == cardnumber.ToString()).FirstOrDefault();
+            account account = model1.account.Where(p => p.CardNumber == cardnumber.ToString()).FirstOrDefault();
             account.ApplyFor = "已通过";
 
             model1.Entry(account).State = System.Data.Entity.EntityState.Modified;
 
             //将client表中的数据移到runner表中
-            runner runner = new runner();
-            client client = model1.client.Where(p => p.CardNumber == cardnumber.ToString()).FirstOrDefault();
-            runner.CardNumber = client.CardNumber;
-            runner.RunnerID = (Convert.ToInt32((model1.runner.OrderByDescending(d => d.RunnerID).FirstOrDefault()).RunnerID) + 1).ToString();
-            runner.Effective = "有效";
-            //model1.client.Remove(client);
-            model1.runner.Add(runner);
+            var a = model1.runner.Where(p => p.CardNumber == cardnumber).FirstOrDefault();
+            if (a == null)
+            {
+                runner runner = new runner();
+                client client = model1.client.Where(p => p.CardNumber == cardnumber.ToString()).FirstOrDefault();
+                runner.CardNumber = client.CardNumber;
+                runner.RunnerID = (Convert.ToInt32((model1.runner.OrderByDescending(d => d.RunnerID).FirstOrDefault()).RunnerID) + 1).ToString();
+                runner.Effective = "有效";
+                //model1.client.Remove(client);
+                model1.runner.Add(runner);
+            }
+            else
+            {
+                runner runner = model1.runner.Where(p => p.CardNumber == cardnumber).FirstOrDefault();
+                runner.Effective = "有效";
+                model1.Entry(runner).State = System.Data.Entity.EntityState.Modified;
+            }
 
             model1.SaveChanges();
-
-
 
             return Content("<script>alert('操作成功！');location.href='Permission'</script>");
         }
 
         public ActionResult Deprived()
         {
-            //授予权限，将状态改为未申请
+            //剥夺权限，将状态改为未申请
             Model1 model1 = new Model1();
             var cardnumber = Request["cardnumber"];
 

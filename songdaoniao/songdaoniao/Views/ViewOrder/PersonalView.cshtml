@@ -1,7 +1,7 @@
 ﻿
 @using ClassLibrary1
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
     List<order> order2 = ViewBag.List;
 }
 
@@ -11,43 +11,44 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>PersonalView</title>
+    <link href="~/Content/PersonalView.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        <div>
-            <h3>您的历史个人订单：</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <td>订单号</td>
-                        <td>生成时间</td>
-                        <td>订单类型</td>
-                        <td>具体要求</td>
-                        <td>收件人ID</td>
-                        <td>收件人电话</td>
-                        <td>打赏</td>
-                        <td>状态</td>
+    <div class="c1">
+        <br /><h3>您的历史个人订单：</h3>
+        <br /><br />
+        <table align="center" border="1" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <td>订单号</td>
+                    <td>生成时间</td>
+                    <td>&nbsp;订单类型&nbsp;</td>
+                    <td>&nbsp;具体要求&nbsp;</td>
+                    <td>&nbsp;收件人ID&nbsp;</td>
+                    <td>收件人电话</td>
+                    <td>&nbsp;打赏&nbsp;</td>
+                    <td>状态</td>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (order li2 in order2)
-                    {
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (order li2 in order2)
+                {
                     <tr>
-                        <td>@li2.OrderNumber</td>
-                        <td>@li2.Date</td>
+                        <td>&nbsp;@li2.OrderNumber&nbsp;</td>
+                        <td>&nbsp;@li2.Date&nbsp;</td>
                         <td>@li2.Type</td>
                         <td>@li2.Text</td>
                         <td>@li2.ClientID</td>
-                        <td>@li2.ClientPhone</td>
+                        <td>&nbsp;@li2.ClientPhone&nbsp;</td>
                         <td>@li2.Tip</td>
-                        <td>@li2.State</td>
+                        <td>&nbsp;@li2.State&nbsp;</td>
                     </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-        <br />
+                }
+            </tbody>
+        </table>
+
     </div>
+    
 </body>
 </html>

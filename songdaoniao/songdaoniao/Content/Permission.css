@@ -1,0 +1,27 @@
+﻿h3 {
+    text-align: center;
+}
+p{
+    text-align:left;
+}
+thead {
+    background-color: #b09fc6;
+    color: #fff;
+}
+
+
+table {
+    border: 1px solid black;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: central;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e3dfeb;
+}

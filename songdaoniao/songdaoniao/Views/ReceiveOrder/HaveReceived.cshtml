@@ -1,7 +1,7 @@
 ﻿@using ClassLibrary1
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "HaveReceivedOrder";
     List<order> order = ViewBag.List;
 }
@@ -12,13 +12,15 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>HaveReceived</title>
-    
+    <link href="~/Content/HaveReceived.css" rel="stylesheet" />
+
 </head>
 <body>
 
         <div>
-            <h3>您已接收的订单：</h3>
-            <table>
+            <br /><h3>您已接收的订单：</h3>
+            <br /><br />
+            <table align="center" border="1" style="border-collapse: collapse;">
                 <thead>
                     <tr>
                         <td>订单号</td>
@@ -29,6 +31,7 @@
                         <td>收件人电话</td>
                         <td>打赏小费</td>
                         <td>订单状态</td>
+                        <td colspan="2">操作</td>
 
                     </tr>
                 </thead>
@@ -37,16 +40,16 @@
                     {
 
                     <tr>
-                        <td>@li.OrderNumber</td>
-                        <td>@li.Date</td>
-                        <td>@li.Type</td>
-                        <td>@li.Text</td>
-                        <td>@li.ClientID</td>
-                        <td>@li.ClientPhone</td>
-                        <td>@li.Tip</td>
-                        <td>@li.State</td>
-                        <td>@Html.ActionLink("退单", "CancelOrder", new { orderid = li.OrderNumber })</td>
-                        <td>@Html.ActionLink("已完成", "FinishOrder", new { orderid = li.OrderNumber })</td>
+                        <td>&nbsp;@li.OrderNumber&nbsp;</td>
+                        <td>&nbsp;@li.Date&nbsp;</td>
+                        <td>&nbsp;@li.Type&nbsp;</td>
+                        <td>&nbsp;@li.Text&nbsp;</td>
+                        <td>&nbsp;@li.ClientID&nbsp;</td>
+                        <td>&nbsp;@li.ClientPhone&nbsp;</td>
+                        <td>&nbsp;@li.Tip&nbsp;</td>
+                        <td>&nbsp;@li.State&nbsp;</td>
+                        <td>&nbsp;@Html.ActionLink("退单", "CancelOrder", new { orderid = li.OrderNumber })&nbsp;</td>
+                        <td>&nbsp;@Html.ActionLink("已完成", "FinishOrder", new { orderid = li.OrderNumber })&nbsp;</td>
                     </tr>
                     }
                 </tbody>
@@ -54,7 +57,6 @@
         </div>
         
          <br />
-         <p>若您想返回继续接单：</p>
-         <input type="submit" onclick='location.href=("/ReceiveOrder/Index")' value="点击返回" />
+
 </body>
 </html>

@@ -29,7 +29,8 @@ body {
 
 .content {
     background-color: #fff;
-    width: 700px;
+    opacity:0.9;
+    width: 750px;
     height: 450px;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
     border-radius: 5px;
@@ -98,6 +99,9 @@ body {
                 display: none;
             }
 
+
+
+
         .navbar ul li a {
             display: flex;
             justify-content: center;
@@ -120,6 +124,7 @@ body {
                 font-size: 12px;
                 white-space: nowrap;
             }
+
 
             .navbar ul li a:hover {
                 color: #fff;
@@ -144,6 +149,9 @@ body {
             /* 文字显示 */
             display: block;
         }
+
+
+
 
     .navbar input:checked ~ ul li a {
         flex-direction: row;
