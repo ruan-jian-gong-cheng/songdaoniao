@@ -55,6 +55,11 @@ namespace songdaoniao.Controllers
             return Content("<script>alert('正在刷新，请稍候……');location.href='/ViewOrder/Orderview'</script>");
         }
 
+        public ActionResult RefreshOnly()
+        {
+            return Content("<script>alert('正在刷新，请稍候……');location.href='/ViewOrder/Orderview_Only'</script>");
+        }
+
         public ActionResult PersonalView()
         {
             //查询所有该账户名下的订单
